@@ -1,13 +1,14 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
-const queries = require('./db/queries');
-require('dotenv').config()
+require('dotenv').config();
 
-// Call in query functions, a module export from queries.sql
-const { getAllDepartments, addDepartment, deleteDepartment, getAllRoles, addRole, deleteRole, getAllEmployees, addEmployee, deleteEmployee, updateEmployeeRole, viewEmployeesByManager, viewEmployeesByDepartment, getTotalUtilizedBudget } = require('./queries');
+// Call in query functions, module exports from queries.js
+const { getAllDepartments, addDepartment, deleteDepartment, getAllRoles, addRole, deleteRole, getAllEmployees, addEmployee, deleteEmployee, updateEmployeeRole, viewEmployeesByManager, viewEmployeesByDepartment, getTotalUtilizedBudget } = require('./db/queries.js');
 
-// Call in connection method with credentials in its object, a module export from connection.js
-const connection = require('connection');
+
+// Call in the mySQL connection object with database credentials from connection.js 
+const connection = require('./connection.js');
+
 
 // Function to initialize the application
 function init() {
@@ -18,12 +19,10 @@ function init() {
       // Call the function to display main list of options
       displayMainOptions();
     })
+  
     .catch((error) => {
       console.error('Error connecting to the database:', error);
-    })
-    .finally(() => {
-      // Close the database connection
-      connection.end();
+      
     });
 }
 
