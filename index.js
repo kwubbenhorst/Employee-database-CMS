@@ -36,12 +36,12 @@ function displayMainOptions() {
       'View all departments',
       'Add department',
       'Delete department',
-      'View all employees',
-      'Add employee',
-      'Delete employee',
       'View all roles',
       'Add role',
       'Delete role',
+      'View all employees',
+      'Add employee',
+      'Delete employee',
       'Update employee role',
       'View employees by manager',
       'View employees by department',
@@ -53,43 +53,43 @@ function displayMainOptions() {
       // Call the appropriate function based on user input
       switch (answers.action) {
         case 'View all departments':
-          return getAllDepartments();
+          return getAllDepartments(displayMainOptions);
           break;
         case 'Add department':
-          return addDepartment();
+          return addDepartment(displayMainOptions);
           break;
         case 'Delete department':
-          return deleteDepartment();
-          break;
-        case 'View all employees':
-          return getAllEmployees();
-          break;
-        case 'Add employee':
-          return addEmployee();
-          break;
-        case 'Delete employee':
-          return deleteEmployee();
+          return deleteDepartment(displayMainOptions);
           break;
         case 'View all roles':
-          return getAllRoles();
+          return getAllRoles(displayMainOptions);
           break;
         case 'Add role':
-          return addRole();
+          return addRole(displayMainOptions);
           break;
         case 'Delete role':
-          return deleteRole();
+          return deleteRole(displayMainOptions);
+          break;
+        case 'View all employees':
+          return getAllEmployees(displayMainOptions);
+          break;
+        case 'Add employee':
+          return addEmployee(displayMainOptions);
+          break;
+        case 'Delete employee':
+          return deleteEmployee(displayMainOptions);
           break;
         case 'Update employee role':
-          return updateEmployeeRole();
+          return updateEmployeeRole(displayMainOptions);
           break;
         case 'View employees by manager':
-          return viewEmployeesByManager();
+          return viewEmployeesByManager(displayMainOptions);
           break;
         case 'View employees by department':
-          return viewEmployeesByDepartment();
+          return viewEmployeesByDepartment(displayMainOptions);
           break;
         case 'View total utilized departmental budget':
-          return getTotalUtilizedBudget();
+          return getTotalUtilizedBudget(displayMainOptions);
           break;
         case 'Quit':
           console.log('Goodbye!');
