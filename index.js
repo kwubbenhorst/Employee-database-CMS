@@ -1,3 +1,7 @@
+//This file serves as the main entry point for the application. It uses the 'inquirer' library to prompt users for actions and invokes corresponding functions from the 'queries.js' file.
+//The main loop which re-presents the main menu when each function has finished executing continues until the user chooses to exit the application.
+
+
 // Import dependencies
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
@@ -11,7 +15,7 @@ const { getAllDepartments, addDepartment, deleteDepartment, getAllRoles, addRole
 const connection = require('./connection.js');
 
 
-// Function to initialize the application
+// Function to initialize the application and connect to the database. It is called at the bottom of the script.
 function init() {
   // Connect to the database
   connection.promise()

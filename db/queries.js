@@ -1,3 +1,7 @@
+//This file contains functions to perform various database queries related to departments, roles, and employees. Each function corresponds to a specific action, such as adding a department or updating an employee's role, according to the option the user has selected from the main menu (see index.js where each of these functions is called using the conditional logic of a switch case).
+// All these functions use the connection object from the 'connection.js' module to interact with the database.
+
+
 //Import inquirer module so I can use it in all these functions to prompt the user.
 const inquirer = require('inquirer');
 //Import connection object with anonymized credentials from the connection.js file to connect to  db
@@ -364,7 +368,7 @@ function deleteEmployee(displayMainOptions) {
 
 
 
-//Function to update an employee's role, user input is gathered with prompts, user selections are matched with entries in an array using the map method, SQL UPDATE syntax is used to replace value of role_id and tables are joined so that selected employee first and last name and role title can be used to update role_id in employee table. Three promises are used to handle the querying of the employee list, the querying of the role list and the updating of the employee role in sequential order
+//Function to update an employee's role. User input is gathered with prompts, user selections are matched with entries in an array using the map method, SQL UPDATE syntax is used to replace value of role_id and tables are joined so that selected employee first and last name and role title can be used to update role_id in employee table. Three promises are used to handle the querying of the employee list, the querying of the role list and the updating of the employee role in sequential order
 function updateEmployeeRole(displayMainOptions) {
   //Query to get the list of employees for the first prompt
   const employeeListQuery = 'SELECT CONCAT(first_name, " ", last_name) AS employeeName FROM employee';

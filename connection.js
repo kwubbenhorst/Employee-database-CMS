@@ -1,3 +1,6 @@
+//Purpose of this file is database connection setup. It provides a connection object with anonymized credentials to connect to the database. It uses the 'mysql2' library and exports the connection object for use in other modules.
+
+
 //Import the mysql2 package
 const mysql = require('mysql2');
 
