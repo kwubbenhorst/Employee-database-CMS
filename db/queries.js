@@ -99,7 +99,7 @@ function getAllRoles(displayMainOptions) {
 }
 
 
-//Function to add a role. Uses inquirer to collect three pieces of user-supplied data and chains promises to ensure they are handled in order. ParseFloat ensures the inputted string for salary is converted to a number as DECIMAL is the SQL data type required for salary. the map method to iterate over the array of departments to look for a match between the user input and an existing name value in the department table.
+//Function to add a role. Uses inquirer to collect three pieces of user-supplied data and chains promises to ensure they are handled in order. ParseFloat ensures the inputted string for salary is converted to a number as DECIMAL is the SQL data type required for salary. The map method iterates over the array of departments to look for a match between the user input and an existing name value in the department table.
 function addRole(displayMainOptions) {
   inquirer
     .prompt([

@@ -1,3 +1,4 @@
+// Import dependencies
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 require('dotenv').config();
@@ -50,7 +51,7 @@ function displayMainOptions() {
     ]
   })
   .then((answers) => {
-      // Call the appropriate function based on user input
+      // Call the appropriate function based on user selection from the MainOptions list
       switch (answers.action) {
         case 'View all departments':
           return getAllDepartments(displayMainOptions);
